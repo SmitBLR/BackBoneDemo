@@ -1,0 +1,11 @@
+<% require 'csv' %>
+<%- headers = ["Id", "Name", "Age", "Nickname", "Student"] -%>
+<%= CSV.generate_line headers %>
+<%- @employees.each do |n| -%>
+<%- row = [ n.id,
+            n.name,
+            n.age,
+            n.nickname,
+            n.student ] -%>
+<%=   CSV.generate_line row %>
+<%- end -%>

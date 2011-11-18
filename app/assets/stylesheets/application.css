@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+.field {
+    float: left;
+}
+
+#content {
+    text-align: center;
+}
+
+#new-employee {
+    width: 500px;
+}
+
+#employees-table {
+    text-align: center;
+}
+
+#name {
+    width: 150px;
+}
+
+#nickname {
+    width: 150px;
+}
+
+#age {
+    width: 50px;
+}
+
+#id-column {
+    width: 25px;
+}
+
+#name-column {
+    width: 200px;
+}
+
+#age-column {
+    width: 25px;
+}
+
+#nickname-column {
+    width: 100px;
+}
+
+#student-column {
+    width: 25px;
+}
+
+#link-column {
+    width: 50px;
+}
+
+.csv_form {
+    width: 500px;
+}
+
+#from, #to {
+    width: 200px;
+}
+
+.error {
+    color : red;
+}

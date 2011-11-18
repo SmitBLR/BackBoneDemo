@@ -1,0 +1,3 @@
+window.router = new BackBoneDemo.Routers.EmployeesRouter({employees: <%= @employees.to_json.html_safe -%>});
+window.router.index();
+$("#pagination").html("<%= escape_javascript(will_paginate @employees) %>");

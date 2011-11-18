@@ -1,0 +1,34 @@
+<div id="content">
+    <div id="add_div" align="center"></div>
+    <div id="errors"></div>
+  <hr/>
+    <div id="employees" align="center"></div>
+    <div id="pagination">
+        <%= will_paginate @epmloyees %>
+    </div>
+  <hr/>
+    <div id="csv_export" align="center">
+      <h3>Data export (please enter records numbers interval)</h3>
+      <%= form_tag({ :format => :csv }, {:method => :get, :class => :csv_form }) do %>
+        <div class="field">
+          <div><%= label_tag :from, "start from(#)" %></div>
+          <div><%= text_field_tag :from, "" %></div>
+        </div>
+        <div class="field">
+          <div><%= label_tag :to, "end with(#)" %></div>
+          <div><%= text_field_tag :to, "" %></div>
+        </div>
+
+        <div class="field">
+          <div>.</div>
+          <div><%= submit_tag "Export" %></div>
+        </div>
+      <% end %>
+    </div>
+</div>
+<script type="text/javascript">
+  $(function() {
+    window.router = new BackBoneDemo.Routers.EmployeesRouter({employees: <%= @employees.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>
